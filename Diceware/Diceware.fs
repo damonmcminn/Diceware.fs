@@ -31,12 +31,10 @@ module Dice =
     let singleRoll (rand:Random) =
         seq { for i in 1..5 -> rand.Next(1, 6).ToString()}
         |> String.Concat
-        // |> fun key -> Map.find key wordList
 
     let rollDice num =
         let rand = new Random()
         seq { for _ in 1..num -> singleRoll rand }
-        // |> fun words -> String.Join(" ", words)
 
 [<EntryPoint>]
 let main argv =
