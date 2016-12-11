@@ -43,7 +43,8 @@ let generatePhrase rolls =
 [<EntryPoint>]
 let main argv =
     Util.getPhraseLength argv
-    |> (Dice.rollNumberOfTimes >> generatePhrase)
+    |> Dice.rollNumberOfTimes
+    |> generatePhrase
     |> printfn "%s"
 
     0 // return an integer exit code
